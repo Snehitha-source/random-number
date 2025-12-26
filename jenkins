@@ -1,0 +1,30 @@
+pipeline {
+    agent any 
+
+    stages {
+        stage('Checkout') {
+            steps {
+                cd $WORKSPACE
+                git clone https://github.com/Snehitha-source/${clone}.git
+                ls -lrt ${clone}
+                cd $WORKSPACE/$clone
+                echo 'Pull code from repo'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Compile'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Run '
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy'
+            }
+        }
+    }
+}
