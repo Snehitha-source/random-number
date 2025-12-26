@@ -7,8 +7,8 @@ pipeline {
                 sh '''
                 cd $WORKSPACE
                 git clone https://github.com/Snehitha-source/${reponame}.git
-                ls -lrt ${clone}
-                cd $WORKSPACE/$clone
+                ls -lrt ${reponame}
+                cd $WORKSPACE/$reponame
                 echo 'Pull code from repo'
                '''
             }
