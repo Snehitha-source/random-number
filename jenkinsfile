@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh '''
                 cd $WORKSPACE
+                rm -rf *
                 git clone https://github.com/Snehitha-source/${reponame}.git
                 ls -lrt ${reponame}
                 cd $WORKSPACE/$reponame
