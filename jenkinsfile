@@ -4,11 +4,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                sh '''
                 cd $WORKSPACE
                 git clone https://github.com/Snehitha-source/${clone}.git
                 ls -lrt ${clone}
                 cd $WORKSPACE/$clone
                 echo 'Pull code from repo'
+               '''
             }
         }
         stage('Build') {
