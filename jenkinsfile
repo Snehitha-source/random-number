@@ -16,6 +16,11 @@ pipeline {
         }
         stage('Build') {
             steps {
+                touch v2
+                echo helloooo > v2
+                git add .
+                git commit -m "adding the file"
+                git push origin main
                 echo 'Compile'
             }
         }
